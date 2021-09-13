@@ -26,8 +26,35 @@ const preamble = (beginIndex, endIndex) => {
   if (counter === 25) {
     console.log("goal", goal);
   }
+
+  part2(arrayForSearch, 26796446);
 }
 
+//part 2
+const part2 = (array, goal) => {
+  let sum = 0;
+
+  let sumArray = [];
+  array.forEach(e => {
+    sum = sum + parseInt(e);
+    sumArray.push(parseInt(e));
+    if (sum == goal) {
+      findMinMax(sumArray);
+    }
+  })
+}
+
+//part 2
+const findMinMax = (array) => {
+  let min = Math.min(...array);
+  let max = Math.max(...array);
+
+  console.log("min",min);
+  console.log("max",max);
+  console.log("result",min + max);
+}
+
+//part 1
 const twoSum = (array, goal) => {
   let mapOfNumbers = {};
   let twoIndexes = [];
